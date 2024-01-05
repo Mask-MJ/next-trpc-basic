@@ -1,0 +1,23 @@
+{
+  "endOfLine": "lf",
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "importOrder": [
+    "<TYPES>",
+    "<TYPES>^[~/types]",
+    "",
+    "react",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+    "^~/styles/(.*)$",
+    "",
+    "^[./]"
+  ],
+  "importOrderSeparation": false,
+  "importOrderTypeScriptVersion": "5.0.0",
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports"
+  ]
+}
