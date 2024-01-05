@@ -8,7 +8,7 @@ type AppConfig = {
 }
 
 export const appConfig: AppConfig = {
-  name: 'Masj-Mj',
+  name: 'Mask-Mj',
   description: 'An app about chat-gpt with Next.js.',
   url: 'https://moyaojun.cn',
   links: {

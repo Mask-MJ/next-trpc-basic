@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server'
-import { getToken } from 'next-auth/jwt'
 import { withAuth } from 'next-auth/middleware'
 
 export default withAuth(
   async function middleware(req) {
-    const token = await getToken({ req })
-    const isAuth = !!token
+    const cookie = req.cookies.get('next-auth.session-token')
+    const isAuth = !!cookie?.value
     const isAuthPage =
       req.nextUrl.pathname.startsWith('/login') ||
       req.nextUrl.pathname.startsWith('/register')
@@ -32,9 +31,6 @@ export default withAuth(
   {
     callbacks: {
       async authorized() {
-        // This is a work-around for handling redirect on auth pages.
-        // We return true here so that the middleware function above
-        // is always called.
         return true
       },
     },
